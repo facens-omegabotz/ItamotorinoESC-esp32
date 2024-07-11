@@ -27,12 +27,12 @@ Itamotorino::Itamotorino(int pinM1a, int pinM1b,
     motorB.setPeriodHertz(frequency);          // standard 50 hz servo
     motorB.attach(pinM1b, valueMin, valueMax); // Attach the servo after it has been detatched
   }
-  motorA.write(initialValue);
-  motorB.write(initialValue);
+  motorA.writeMicroseconds(initialValue);
+  motorB.writeMicroseconds(initialValue);
 }
 
 void Itamotorino::setSpeeds(int motorValueInsecondsA, int motorValueInsecondsB)
 {
-  motorA.write(motorValueInsecondsA);
-  motorB.write(motorValueInsecondsB);
+  motorA.writeMicroseconds(motorValueInsecondsA);
+  motorB.writeMicroseconds(motorValueInsecondsB);
 }
